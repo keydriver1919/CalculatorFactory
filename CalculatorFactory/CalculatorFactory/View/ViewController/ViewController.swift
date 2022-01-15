@@ -17,33 +17,33 @@ class ViewController: UIViewController {
     
     //呼叫工廠方法
     @IBAction func numbers(_ sender: UIButton) {
-        CalculatorsFactory.createCalculator(.numbers,on: label, in: sender)
+        CalculatorsFactory.createCalculator(.numbers, label, sender)
     }
     
     @IBAction func clear(_ sender: UIButton) {
-        CalculatorsFactory.createCalculator(.clear,on: label, in: sender)
+        CalculatorsFactory.createCalculator(.clear, label, sender)
     }
     
     @IBAction func add(_ sender: UIButton) {
-        CalculatorsFactory.createCalculator(.add, on: label, in: sender)
+        CalculatorsFactory.createCalculator(.add, label, sender)
     }
     
     @IBAction func substract(_ sender: UIButton) {
-        CalculatorsFactory.createCalculator(.substract, on: label, in: sender)
+        CalculatorsFactory.createCalculator(.substract, label, sender)
     }
     
     @IBAction func multiply(_ sender: UIButton) {
-        CalculatorsFactory.createCalculator(.multiply, on: label, in: sender)
+        CalculatorsFactory.createCalculator(.multiply, label, sender)
     }
     
     @IBAction func divide(_ sender: UIButton) {
-        let divide = CalculatorsFactory.getCalculator(.divide, on: label, in: sender)
-        divide.count()
+        CalculatorsFactory.createCalculator(.divide, label, sender)
+
     }
     
     @IBAction func giveMeAnswer(_ sender: UIButton) {
-        let giveMeAnswer = CalculatorsFactory.getCalculator(.giveMeAnswer, on: label, in: sender)
-        giveMeAnswer.count()
+        CalculatorsFactory.createCalculator(.giveMeAnswer, label, sender)
+
     }
     
 }

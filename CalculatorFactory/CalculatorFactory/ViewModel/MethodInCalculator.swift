@@ -1,4 +1,4 @@
-//工廠方法內會用到的運算邏輯
+//按鈕區
 import UIKit
 //加法
 class Add : Calculator {
@@ -56,31 +56,6 @@ class Clear : Calculator {
     }
 }
 
-//點按數字
-class Numbers: Calculator {
-    var sender: UIButton
-    init(label:UILabel, sender: UIButton) {
-        self.sender = sender
-        super.init(label: label)
-    }
-    override func count() {
-        let inputNumber = sender.tag - 1
-        if label.text != nil{
-            if startNew == true{
-                label.text = "\(inputNumber)"
-                startNew = false
-            }else{
-                if label.text == "0" || label.text == "+" || label.text == "-" || label.text == "x" || label.text == "/" {
-                    label.text = "\(inputNumber)"
-                }else{
-                    label.text = label.text! + "\(inputNumber)"
-                }
-            }
-            screenNumber = Double(label.text!) ?? 0
-        }
-    }
-}
-
 //計算結果
 class GiveMeAnswer: Calculator{
     override func count(){
@@ -111,6 +86,28 @@ class GiveMeAnswer: Calculator{
     }
 }
 
-
-
+//點按數字
+class Numbers: Calculator {
+    var sender: UIButton
+    init(label:UILabel, sender: UIButton) {
+        self.sender = sender
+        super.init(label: label)
+    }
+    override func count() {
+        let inputNumber = sender.tag - 1
+        if label.text != nil{
+            if startNew == true{
+                label.text = "\(inputNumber)"
+                startNew = false
+            }else{
+                if label.text == "0" || label.text == "+" || label.text == "-" || label.text == "x" || label.text == "/" {
+                    label.text = "\(inputNumber)"
+                }else{
+                    label.text = label.text! + "\(inputNumber)"
+                }
+            }
+            screenNumber = Double(label.text!) ?? 0
+        }
+    }
+}
 
